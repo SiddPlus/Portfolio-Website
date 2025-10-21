@@ -1,0 +1,63 @@
+\doxysection{Rectangle Class Reference}
+\hypertarget{class_rectangle}{}\label{class_rectangle}\index{Rectangle@{Rectangle}}
+
+
+Represents a rectangle, inheriting properties from \doxylink{class_shape}{Shape}.  
+
+
+Inheritance diagram for Rectangle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_rectangle}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rectangle_ac38b38158a66015394a670890e07f94f}{calculate\+\_\+area}} (int l, int w)
+\begin{DoxyCompactList}\small\item\em Calculates the area of the rectangle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_shape}{Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_shape_ae2141571a3544b1f778a97e5b37c218a}{get\+\_\+area}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the calculated area of the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_shape}{Shape}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_shape_ab2e54f3e5ef98f1b13072d806b665568}{area}}
+\begin{DoxyCompactList}\small\item\em Stores the calculated area of the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a rectangle, inheriting properties from \doxylink{class_shape}{Shape}. 
+
+This class calculates the area of the rectangle and stores it in the inherited \textquotesingle{}area\textquotesingle{} variable. 
+
+\label{doc-func-members}
+\Hypertarget{class_rectangle_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_rectangle_ac38b38158a66015394a670890e07f94f}\index{Rectangle@{Rectangle}!calculate\_area@{calculate\_area}}
+\index{calculate\_area@{calculate\_area}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{calculate\_area()}{calculate\_area()}}
+{\footnotesize\ttfamily \label{class_rectangle_ac38b38158a66015394a670890e07f94f} 
+void Rectangle\+::calculate\+\_\+area (\begin{DoxyParamCaption}\item[{int}]{l}{, }\item[{int}]{w}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the area of the rectangle. 
+
+Sets the private length and width, computes the product, and stores it in the inherited \textquotesingle{}area\textquotesingle{} member.
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & The length of the rectangle. \\
+\hline
+{\em w} & The width of the rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_doxygen_01example_8cpp}{Doxygen example.\+cpp}}\end{DoxyCompactItemize}
