@@ -1,7 +1,19 @@
-html {
+body {
     background-color: black;
+    color: white; /* This makes ALL text white by default */
+    font-family: sans-serif; /* Makes it look cleaner than the default font */
+    padding: 20px;
+    line-height: 1.6;
 }
 
-h1, h2, h3, p {
+/* Ensure all headers are explicitly white and have some spacing */
+h1, h2, h3 {
     color: white;
+    margin-top: 40px; /* Adds space above the header so it's not cramped */
+    margin-bottom: 10px;
+}
+
+/* Specific color for links so they don't stay dark blue */
+a {
+    color: #4da6ff;
 }
