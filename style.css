@@ -1,19 +1,27 @@
-body {
+html {
     background-color: black;
-    color: white; /* This makes ALL text white by default */
-    font-family: sans-serif; /* Makes it look cleaner than the default font */
-    padding: 20px;
+}
+
+body {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
     line-height: 1.6;
 }
 
-/* Ensure all headers are explicitly white and have some spacing */
-h1, h2, h3 {
+h1, h2, h3, p {
     color: white;
-    margin-top: 40px; /* Adds space above the header so it's not cramped */
-    margin-bottom: 10px;
 }
 
-/* Specific color for links so they don't stay dark blue */
+h3 {
+    margin-top: 50px;
+    border-left: 3px solid white;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 a {
-    color: #4da6ff;
+    color: white;
+    text-decoration: underline;
 }
