@@ -32,7 +32,7 @@
             <div class="project-card"> 
                 <h3>TheCastingOfFrankStone Gameplay</h3> 
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/euJvi0Sxb40" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                <p>Worked in a multidisciplinary team of 8 on an industry brief project, with Supermassive Games. Acted as the sole Programmer. Implemented Blueprint systems to support branching narrative mechanics.</p>
+                <p>Worked in a multidisciplinary team of 8 on an industry brief project with Supermassive Games. Implemented Blueprint systems to support branching narrative mechanics.</p>
             </div>
             <div class="project-card"> 
                 <h3>Last Drop Trailer</h3> 
@@ -47,7 +47,7 @@
             <div class="project-card"> 
                 <h3>A Bubbly Journey</h3> 
                 <a href="https://siddplus.itch.io/a-bubbly-journey" target="_blank"><img src="https://raw.githubusercontent.com/SiddPlus/Portfolio-Website/refs/heads/main/Images/A%20Bubbly%20Journey.png" alt="A Bubbly Journey" class="project-img"></a>
-                <p>Developed in 48 hours in Unity for Global Game Jam. Focused on cooperative puzzle-solving mechanics and player interactions.</p>
+                <p>Developed in 48 hours in Unity for Global Game Jam. Focused on cooperative puzzle-solving mechanics.</p>
             </div>
             <div class="project-card">
                 <h3>Biscuit Roulette</h3> 
@@ -94,19 +94,49 @@
     <footer id="contact" class="contact-footer">
         <h2 class="contact-title">CONTACT</h2>
         
-        <form action="https://formspree.io/f/mzdajeoo" method="POST" class="contact-form">
+        <form id="contact-form" action="https://formspree.io/f/mzdajeoo" method="POST" class="contact-form">
             <input type="email" name="email" placeholder="Email Address" class="form-input" required>
             <input type="text" name="name" placeholder="Name" class="form-input" required>
             <textarea name="message" placeholder="Your message" class="form-textarea" required></textarea>
             <button type="submit" class="form-button">SEND MESSAGE</button>
         </form>
 
+        <div id="success-status" class="success-message">
+            <p>Message sent successfully. I'll get back to you soon!</p>
+        </div>
+
         <div class="social-links">
             <a href="https://github.com/SiddPlus" target="_blank">GitHub</a>
             <span class="separator">|</span>
-            <a href="#" target="_blank">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/siddharth-ghosalkar-3a0158372/" target="_blank">LinkedIn</a>
         </div>
     </footer>
+
+    <script>
+        const form = document.getElementById("contact-form");
+        const successMessage = document.getElementById("success-status");
+
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            
+            fetch(event.target.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.style.display = "none"; // Form disappears
+                    successMessage.style.display = "block"; // Message appears
+                    form.reset();
+                } else {
+                    alert("Oops! There was a problem submitting your form");
+                }
+            }).catch(error => {
+                alert("Oops! There was a problem submitting your form");
+            });
+        });
+    </script>
 
   </body>
 </html>
