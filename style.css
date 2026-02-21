@@ -141,7 +141,6 @@ body {
 
 .form-textarea {
     height: 150px;
-    /* Allows vertical expansion as requested */
     resize: vertical; 
     min-height: 100px;
 }
@@ -163,15 +162,21 @@ body {
     color: #000;
 }
 
-/* Success Message Styling */
+/* Success Message Styling with Animation */
 .success-message {
     display: none;
     text-align: center;
-    padding: 30px;
+    padding: 40px;
     border: 1px solid #fff;
     font-family: 'Courier New', Courier, monospace;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .social-links {

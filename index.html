@@ -126,8 +126,8 @@
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    form.style.display = "none"; // Form disappears
-                    successMessage.style.display = "block"; // Message appears
+                    form.style.display = "none"; 
+                    successMessage.style.display = "block"; 
                     form.reset();
                 } else {
                     alert("Oops! There was a problem submitting your form");
