@@ -94,10 +94,10 @@
     <footer id="contact" class="contact-footer">
         <h2 class="contact-title">CONTACT</h2>
         
-        <form class="contact-form">
-            <input type="email" placeholder="Email Address" class="form-input">
-            <input type="text" placeholder="Name" class="form-input">
-            <textarea placeholder="Your message" class="form-textarea"></textarea>
+        <form action="https://formspree.io/f/mzdajeoo" method="POST" class="contact-form">
+            <input type="email" name="email" placeholder="Email Address" class="form-input" required>
+            <input type="text" name="name" placeholder="Name" class="form-input" required>
+            <textarea name="message" placeholder="Your message" class="form-textarea" required></textarea>
             <button type="submit" class="form-button">SEND MESSAGE</button>
         </form>
 
