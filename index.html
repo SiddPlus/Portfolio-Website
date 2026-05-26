@@ -6,16 +6,16 @@
     <title>Siddharth Ghosalkar | Portfolio</title>
     <link rel="stylesheet" href="./style.css" />
     <style>
-      /* Container that maintains a perfect 16:9 aspect ratio box to show the entire video */
+      /* Styles to support the background video container */
       .video-background-container {
         position: relative;
         width: 100%;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
+        /* Stretches the section vertically to a perfect 16:9 aspect ratio so the video is fully seen */
+        height: 56.25vw; 
         overflow: hidden;
-        background: #000;
+        background-color: #000;
       }
 
-      /* Fits the video perfectly from edge to edge without cropping any side */
       .video-background-container iframe {
         position: absolute;
         top: 0;
@@ -37,7 +37,7 @@
         z-index: 2;
       }
 
-      /* Centers the text layout directly over the uncropped video area */
+      /* Positions the header text content on top of the background video */
       .video-background-container .hero {
         position: absolute;
         top: 50%;
@@ -122,7 +122,7 @@
                 <p>Remade Super Mario Bros World 1-1, demonstrating platformer mechanics and Unity's 2D tools.</p>
             </div>
             <div class="project-card"> 
-                <h3>Bank Heist Interactive Narrative</h3> 
+                <h3>Bank He Heist Interactive Narrative</h3> 
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/HdZWC-mhQcM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Developed in Unreal Engine 5 as the sole programmer, focusing on branching storylines.</p>
             </div>
