@@ -55,6 +55,53 @@
         box-sizing: border-box;
       }
 
+      /* --- About Me Section Custom Layout Design --- */
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+
+      .about-card {
+        background-color: #111;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        padding: 30px 25px;
+        text-align: center;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+      }
+
+      .about-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      /* Mimicking the minimal aesthetic icons from the screenshot template */
+      .about-icon {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        display: block;
+      }
+
+      .about-card h3 {
+        font-size: 1.25rem;
+        color: #fff;
+        margin-top: 0;
+        margin-bottom: 15px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      .about-card p {
+        color: #b3b3b3;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+        text-align: justify;
+        text-align-last: center;
+      }
+
       /* Additional styling for structured project metadata text */
       .project-meta {
         margin-bottom: 15px;
@@ -137,7 +184,7 @@
       }
 
       .tools-category-card:hover {
-        transform: translateY(-50px);
+        transform: translateY(-5px);
         border-color: rgba(255, 255, 255, 0.2);
       }
 
@@ -181,6 +228,7 @@
 
     <nav class="navbar">
         <a href="#home">Home</a>
+        <a href="#about">About Me</a>
         <a href="#projects">Projects</a>
         <a href="#tools">Tools</a>
         <a href="#contact">Contact</a>
@@ -197,6 +245,27 @@
                 Year 3 student at University for the Creative Arts, studying BSc Games Development, graduating in July 2026
             </p>
         </header>
+    </div>
+
+    <div id="about" class="content-container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <span class="about-icon"></span>
+                <h3>Academic & Student</h3>
+                <p>Currently in my final year pursuing a BSc in Games Development at the University for the Creative Arts, graduating in July 2026. Heavily focused on game architecture frameworks, game loop mechanics, and collaborative multi-disciplinary development teams to build projects through industry standard production timelines.</p>
+            </div>
+            <div class="about-card">
+                <span class="about-icon"></span>
+                <h3>Games Developer</h3>
+                <p>Passionate about crafting complex gameplay systems in both singleplayer and multiplayer games from prototype phase to final release. Experienced across both Unity and Unreal Engine 5, managing everything from modular component-Driven gameplay architecture, AI logic, physics handling to performance throttling</p>
+            </div>
+            <div class="about-card">
+                <span class="about-icon"></span>
+                <h3>Systems & Architecture</h3>
+                <p>Dedicated to structured code environments adhering to clean programming principles. Specialized in building networked multiplayer game systems.</p>
+            </div>
+        </div>
     </div>
 
     <div id="projects" class="content-container">
@@ -302,23 +371,24 @@
             <div class="tools-category-card">
                 <h3>Engines</h3>
                 <ul class="tools-list">
-                    <li>Unreal Engine 5</li>
+                    <li>Unreal Engine 5 (5.4 / 5.6)</li>
                     <li>Unity Engine</li>
                 </ul>
             </div>
             <div class="tools-category-card">
                 <h3>Languages</h3>
                 <ul class="tools-list">
-                    <li>C++</li>
-                    <li>Blueprints Scripting</li>
+                    <li>C++ (Native Gameplay)</li>
                     <li>C#</li>
+                    <li>Blueprints Scripting</li>
                 </ul>
             </div>
             <div class="tools-category-card">
                 <h3>Systems & Architecture</h3>
                 <ul class="tools-list">
-                    <li>Networked Multiplayer Game Sysstem</li>
+                    <li>Multiplayer Replication (RPCs)</li>
                     <li>JSON Serialization</li>
+                    <li>SOLID Principles</li>
                 </ul>
             </div>
             <div class="tools-category-card">
@@ -326,6 +396,8 @@
                 <ul class="tools-list">
                     <li>Git / Source Control</li>
                     <li>Doxygen</li>
+                    <li>Autodesk Maya</li>
+                    <li>Substance Painter</li>
                 </ul>
             </div>
         </div>
