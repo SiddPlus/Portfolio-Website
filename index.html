@@ -40,7 +40,7 @@
         z-index: 2;
       }
 
-      /* Centered text formatting exactly over the center of the video block */
+      /* Positions the header text content on top of the background video */
       .video-background-container .hero {
         position: absolute;
         top: 50%;
@@ -53,6 +53,71 @@
         margin: 0;
         padding: 0 20px;
         box-sizing: border-box;
+      }
+
+      /* Additional styling for structured project metadata text */
+      .project-meta {
+        margin-bottom: 15px;
+        color: #fff;
+        line-height: 1.6;
+      }
+      /* Makes the labels unbolded and pure white */
+      .project-meta span.label {
+        font-weight: normal;
+        color: #fff;
+      }
+
+      /* Center-aligned container wrapper for the Year 3 spotlight video showcase */
+      .video-showcase-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px auto 15px auto;
+        max-width: 800px; /* Limits scale width elegantly on ultra-wide desktop monitors */
+        width: 100%;
+      }
+
+      /* Maintains a strict responsive 16:9 widescreen layout for the centered frame video */
+      .video-aspect-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 Proportional Aspect Ratio padding hack */
+        height: 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05); /* Premium soft glow layer */
+      }
+
+      .video-aspect-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Centered container for the repository link link */
+      .repo-link-container {
+        text-align: center;
+        margin: 0 auto 40px auto;
+      }
+
+      .repo-link-container a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        display: inline-block;
+      }
+
+      .repo-link-container a:hover {
+        background-color: #fff;
+        color: #000;
+        border-color: #fff;
       }
     </style>
   </head>
@@ -81,7 +146,34 @@
         <h2 class="section-title">Projects</h2>
 
         <h3 class="year-label">Year 3</h3> 
-        <p>I will have a final major project which is a third person multiplayer roguelike developed on unreal engine 5.6 with the focus of modular multiplayer gameplay systems architecture and a custom-made procedural map generation algorithm with the key goal is to launch on Steam.</p>
+        <div class="fmp-project-showcase">
+            <h3>Evolved Survivors</h3>
+            
+            <div class="project-meta">
+                <span class="label">Role:</span> Solo Dev<br>
+                <span class="label">Engine & Tools:</span> Unreal Engine 5 (C++), Git, JSON Serialization, Doxygen<br>
+                <span class="label">Status:</span> Feature-Complete (3rd-Year Final Major Project) | Shifting to Steam Launch Integration
+            </div>
+            
+            <h4>Project Overview</h4>
+            <p>Evolved Survivors is a cooperative, round-based multiplayer roguelike game built entirely in Unreal Engine 5.6 using native C++. Developed as my university 3rd-year Final Major Project (FMP), the game focuses on delivering intense wave-based combat, rogue-lite progression mechanics, and deterministic environments. The core design philosophy centers around high-performance code architecture and strict network safety, ensuring an optimized, cheat-free gameplay experience over multiplayer sessions.</p>
+            
+            <h4>Core Technical Architecture & Engineering Highlights</h4>
+            <p>Adhering to strict SOLID design principles, the game’s core mechanics are decoupled into modular, single-responsibility Actor Components (UHealthSystem, UPlayerPerks, ULootPool), where the server acts as the absolute authority—hard-gating combat health tracking and deck-shuffling perk selections via reliable Server RPCs before synchronizing properties downstream using RepNotify state mirrors for prediction-smooth client HUD updates. To minimize network bandwidth during high-density cooperative play, environmental layouts utilize a deterministic seeding strategy where the server broadcasts a single int32 Seed property to all machines, allowing remote clients to independently execute identical Perlin noise and grid generation algorithms to achieve perfect asset and collision parity with virtually zero data overhead over the wire. Furthermore, server performance is protected against frame degradation through a multi-tiered entity throttling system that dynamically scales mob ceilings based on active player counts, requiring local spawners to complete an instant handshake verification with ATheGameMode before instantiating an actor mesh while simultaneously offloading cosmetic visual effects to reliable Multicast RPCs. Finally, the backend integrates robust data persistence and diagnostics pipelines driven by custom JSON serialization models; a background-polling UPerformanceLogger component samples low-level platform architecture bounds (including frame render times, CPU cycles, and raw physical memory allocations via platform-level wrappers) to flush a session timeline to disk at teardown, while a native C++ static telemetry class operates on a detached read-modify-write lifecycle to safely parse, evaluate, and overwrite high scores and progressive perk achievements into a permanent profile container completely independent of volatile actor lifecycles.</p>
+            
+            <h4>Key Takeaways & Next Steps</h4>
+            <p>Developing Evolved Survivors from a completely blank page allowed me to master real-world game development patterns, secure network replication paradigms, and complex data serialization methods. Now that the academic project deadlines are successfully completed, I am polishing, optimizing and preparing the title an upcoming release on Steam.</p>
+        </div>
+
+        <div class="video-showcase-center">
+            <div class="video-aspect-wrapper">
+                <iframe src="https://www.youtube.com/embed/c51VBGlofx0" title="Evolved Survivors - Round Gameplay Video Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="repo-link-container">
+            <a href="https://github.com/SiddPlus/FMPGame" target="_blank">View GitHub Repository</a>
+        </div>
 
         <h3 class="year-label">Year 2</h3> 
         <div class="project-grid"> 
