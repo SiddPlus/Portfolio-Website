@@ -6,38 +6,41 @@
     <title>Siddharth Ghosalkar | Portfolio</title>
     <link rel="stylesheet" href="./style.css" />
     <style>
-      /* Styles to support the background video container */
+      /* Stretches the home section to completely fill the monitor screen like the screenshot */
       .video-background-container {
         position: relative;
-        width: 100%;
-        /* Stretches the section vertically to a perfect 16:9 aspect ratio so the video is fully seen */
-        height: 56.25vw; 
+        width: 100vw;
+        height: 100vh; /* Fills 100% of the viewport height */
         overflow: hidden;
         background-color: #000;
       }
 
+      /* Ensures the background video scales cleanly without letterboxing */
       .video-background-container iframe {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 56.25vw; /* 16:9 Aspect Ratio calculation */
+        min-height: 100vh;
+        min-width: 177.77vh; /* Keeps video from clipping improperly on ultra-wide screens */
+        transform: translate(-50%, -50%);
         z-index: 1;
-        pointer-events: none; /* Prevents user interaction with the YouTube player */
+        pointer-events: none;
       }
 
-      /* Overlay to make the header text legible over the video */
+      /* Dark semi-transparent layer matching the moody atmosphere of the reference screenshot */
       .video-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Adjust opacity for background text visibility */
+        background: rgba(10, 15, 20, 0.65); /* Dark tint to elevate text readability */
         z-index: 2;
       }
 
-      /* Positions the header text content on top of the background video */
+      /* Centered text formatting exactly over the center of the video block */
       .video-background-container .hero {
         position: absolute;
         top: 50%;
@@ -122,7 +125,7 @@
                 <p>Remade Super Mario Bros World 1-1, demonstrating platformer mechanics and Unity's 2D tools.</p>
             </div>
             <div class="project-card"> 
-                <h3>Bank He Heist Interactive Narrative</h3> 
+                <h3>Bank Heist Interactive Narrative</h3> 
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/HdZWC-mhQcM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Developed in Unreal Engine 5 as the sole programmer, focusing on branching storylines.</p>
             </div>
