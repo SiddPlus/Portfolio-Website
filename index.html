@@ -6,23 +6,22 @@
     <title>Siddharth Ghosalkar | Portfolio</title>
     <link rel="stylesheet" href="./style.css" />
     <style>
-      /* Styles to support the background video container */
+      /* Container that maintains a perfect 16:9 aspect ratio box to show the entire video */
       .video-background-container {
         position: relative;
         width: 100%;
-        height: 60vh; /* Set appropriate height for the hero video section */
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (9 / 16 = 0.5625) */
         overflow: hidden;
+        background: #000;
       }
 
+      /* Fits the video perfectly from edge to edge without cropping any side */
       .video-background-container iframe {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100vw;
-        height: 56.25vw; /* 16:9 Aspect Ratio */
-        min-height: 100%;
-        min-width: 177.77vh; /* 16:9 Aspect Ratio */
-        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         z-index: 1;
         pointer-events: none; /* Prevents user interaction with the YouTube player */
       }
@@ -38,7 +37,7 @@
         z-index: 2;
       }
 
-      /* Positions the header text content on top of the background video */
+      /* Centers the text layout directly over the uncropped video area */
       .video-background-container .hero {
         position: absolute;
         top: 50%;
