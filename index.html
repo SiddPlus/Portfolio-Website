@@ -1,230 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Siddharth Ghosalkar | Portfolio</title>
     <link rel="stylesheet" href="./style.css" />
     <style>
-      /* Stretches the home section to completely fill the monitor screen like the screenshot */
-      .video-background-container {
-        position: relative;
-        width: 100vw;
-        height: 100vh; /* Fills 100% of the viewport height */
-        overflow: hidden;
-        background-color: #000;
-      }
+        /* Stretches the home section to completely fill the monitor screen like the screenshot */
+        .video-background-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh; /* Fills 100% of the viewport height */
+            overflow: hidden;
+            background-color: #000;
+        }
 
-      /* Ensures the background video scales cleanly without letterboxing */
-      .video-background-container iframe {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100vw;
-        height: 56.25vw; /* 16:9 Aspect Ratio calculation */
-        min-height: 100vh;
-        min-width: 177.77vh; /* Keeps video from clipping improperly on ultra-wide screens */
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        pointer-events: none;
-      }
+            /* Ensures the background video scales cleanly without letterboxing */
+            .video-background-container iframe {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100vw;
+                height: 56.25vw; /* 16:9 Aspect Ratio calculation */
+                min-height: 100vh;
+                min-width: 177.77vh; /* Keeps video from clipping improperly on ultra-wide screens */
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                pointer-events: none;
+            }
 
-      /* Dark semi-transparent layer matching the moody atmosphere of the reference screenshot */
-      .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(10, 15, 20, 0.65); /* Dark tint to elevate text readability */
-        z-index: 2;
-      }
+        /* Dark semi-transparent layer matching the moody atmosphere of the reference screenshot */
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 15, 20, 0.65); /* Dark tint to elevate text readability */
+            z-index: 2;
+        }
 
-      /* Positions the header text content on top of the background video */
-      .video-background-container .hero {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 3;
-        width: 100%;
-        text-align: center;
-        background: transparent;
-        margin: 0;
-        padding: 0 20px;
-        box-sizing: border-box;
-      }
+        /* Positions the header text content on top of the background video */
+        .video-background-container .hero {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            margin: 0;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
 
-      /* --- About Me Section Custom Layout Design --- */
-      .about-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-        margin-top: 30px;
-      }
+        /* --- About Me Section Custom Layout Design --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
 
-      .about-card {
-        background-color: #111;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        padding: 30px 25px;
-        text-align: center;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-      }
+        .about-card {
+            background-color: #111;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
 
-      .about-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(255, 255, 255, 0.15);
-      }
+            .about-card:hover {
+                transform: translateY(-5px);
+                border-color: rgba(255, 255, 255, 0.15);
+            }
 
-      /* Mimicking the minimal aesthetic icons from the screenshot template */
-      .about-icon {
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-        display: block;
-      }
+        /* Mimicking the minimal aesthetic icons from the screenshot template */
+        .about-icon {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            display: block;
+        }
 
-      /* FIXED TEXT ALIGNMENT: Changed from justify to center to eliminate text spacing gaps */
-      .about-card p {
-        color: #b3b3b3;
-        font-size: 0.95rem;
-        line-height: 1.6;
-        margin: 0;
-        text-align: center;
-      }
+        /* FIXED TEXT ALIGNMENT: Changed from justify to center to eliminate text spacing gaps */
+        .about-card p {
+            color: #b3b3b3;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+            text-align: center;
+        }
 
-      /* Additional styling for structured project metadata text */
-      .project-meta {
-        margin-bottom: 15px;
-        color: #fff;
-        line-height: 1.6;
-      }
-      /* Makes the labels unbolded and pure white */
-      .project-meta span.label {
-        font-weight: normal;
-        color: #fff;
-      }
+        /* Additional styling for structured project metadata text */
+        .project-meta {
+            margin-bottom: 15px;
+            color: #fff;
+            line-height: 1.6;
+        }
+            /* Makes the labels unbolded and pure white */
+            .project-meta span.label {
+                font-weight: normal;
+                color: #fff;
+            }
 
-      /* Center-aligned container wrapper for the Year 3 spotlight video showcase */
-      .video-showcase-center {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 40px auto 15px auto;
-        max-width: 800px; /* Limits scale width elegantly on ultra-wide desktop monitors */
-        width: 100%;
-      }
+        /* Center-aligned container wrapper for the Year 3 spotlight video showcase */
+        .video-showcase-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto 15px auto;
+            max-width: 800px; /* Limits scale width elegantly on ultra-wide desktop monitors */
+            width: 100%;
+        }
 
-      /* Maintains a strict responsive 16:9 widescreen layout for the centered frame video */
-      .video-aspect-wrapper {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9 Proportional Aspect Ratio padding hack */
-        height: 0;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05); /* Premium soft glow layer */
-      }
+        /* Maintains a strict responsive 16:9 widescreen layout for the centered frame video */
+        .video-aspect-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Proportional Aspect Ratio padding hack */
+            height: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05); /* Premium soft glow layer */
+        }
 
-      .video-aspect-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-      }
+            .video-aspect-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
 
-      /* UPDATED CONTAINER: Flexbox layout for clean horizontal side-by-side buttons */
-      .repo-link-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 15px; /* Perfect spacing between links */
-        margin: 0 auto 40px auto;
-        flex-wrap: wrap; /* Wraps cleanly on mobile portrait screens */
-      }
+        /* UPDATED CONTAINER: Flexbox layout for clean horizontal side-by-side buttons */
+        .repo-link-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; /* Perfect spacing between links */
+            margin: 0 auto 40px auto;
+            flex-wrap: wrap; /* Wraps cleanly on mobile portrait screens */
+        }
 
-      .repo-link-container a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 500;
-        padding: 10px 20px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
-        transition: all 0.3s ease;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px; /* Spaces icon text inside the link block */
-        min-width: 180px;
-        justify-content: center;
-        box-sizing: border-box;
-      }
+            .repo-link-container a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: 500;
+                padding: 10px 20px;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px; /* Spaces icon text inside the link block */
+                min-width: 180px;
+                justify-content: center;
+                box-sizing: border-box;
+            }
 
-      .repo-link-container a:hover {
-        background-color: #fff;
-        color: #000;
-        border-color: #fff;
-      }
+                .repo-link-container a:hover {
+                    background-color: #fff;
+                    color: #000;
+                    border-color: #fff;
+                }
 
-      /* Custom Layout Styling for the Tools Section */
-      .tools-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 20px;
-        margin-top: 30px;
-      }
+        /* Custom Layout Styling for the Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
 
-      .tools-category-card {
-        background-color: #111;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        padding: 20px;
-        transition: transform 0.3s ease, border-color 0.3s ease;
-      }
+        .tools-category-card {
+            background-color: #111;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
 
-      .tools-category-card:hover {
-        transform: translateY(-5px);
-        border-color: rgba(255, 255, 255, 0.2);
-      }
+            .tools-category-card:hover {
+                transform: translateY(-5px);
+                border-color: rgba(255, 255, 255, 0.2);
+            }
 
-      .tools-category-card h3 {
-        font-size: 1.2rem;
-        color: #fff;
-        margin-top: 0;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 8px;
-      }
+            .tools-category-card h3 {
+                font-size: 1.2rem;
+                color: #fff;
+                margin-top: 0;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 8px;
+            }
 
-      .tools-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
+        .tools-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-      .tools-list li {
-        color: #ccc;
-        margin-bottom: 8px;
-        font-size: 0.95rem;
-        display: flex;
-        align-items: center;
-      }
+            .tools-list li {
+                color: #ccc;
+                margin-bottom: 8px;
+                font-size: 0.95rem;
+                display: flex;
+                align-items: center;
+            }
 
-      /* Minimal modern custom bullet style */
-      .tools-list li::before {
-        content: "•";
-        color: #fff;
-        font-weight: bold;
-        display: inline-block;
-        width: 1em;
-        margin-left: 2px;
-      }
+                /* Minimal modern custom bullet style */
+                .tools-list li::before {
+                    content: "•";
+                    color: #fff;
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 1em;
+                    margin-left: 2px;
+                }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
     <nav class="navbar">
         <a href="#home">Home</a>
@@ -236,13 +236,13 @@
 
     <div class="video-background-container">
         <iframe src="https://www.youtube.com/embed/c51VBGlofx0?autoplay=1&mute=1&loop=1&playlist=c51VBGlofx0&controls=0&showinfo=0&rel=0&modestbranding=1" title="Evolved Survivors - Round Gameplay Background" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        
+
         <div class="video-overlay"></div>
 
         <header id="home" class="hero">
             <h1>Siddharth Ghosalkar</h1>
             <p class="subtitle">
-                Year 3 student at University for the Creative Arts, studying BSc Games Development, graduating in July 2026
+                Gameplay Mechanics & Systems Engineer specializing in UE5 (C++), Networked Multiplayer, and AWS Cloud Backends
             </p>
         </header>
     </div>
@@ -252,7 +252,7 @@
         <div class="about-grid">
             <div class="about-card">
                 <span class="about-icon">🎓</span>
-                <h3>Academic & Student</h3>
+                <h3>Academic</h3>
                 <p>I am a graduate of BSc Games Development from the University for the Creative Arts. Heavily focused on game architecture frameworks, game loop mechanics, and collaborative multi-disciplinary development teams to build projects through industry standard production timelines.</p>
             </div>
             <div class="about-card">
@@ -271,22 +271,22 @@
     <div id="projects" class="content-container">
         <h2 class="section-title">Projects</h2>
 
-        <h3 class="year-label">Year 3</h3> 
+        <h3 class="year-label">Year 3</h3>
         <div class="fmp-project-showcase">
             <h3>Evolved Survivors</h3>
-            
+
             <div class="project-meta">
                 <span class="label">Role:</span> Solo Dev<br>
                 <span class="label">Engine & Tools:</span> Unreal Engine 5 (C++), Git, JSON Serialization, Doxygen<br>
                 <span class="label">Status:</span> Feature-Complete (3rd-Year Final Major Project) | Shifting to Steam Launch Integration
             </div>
-            
+
             <h4>Project Overview</h4>
             <p>Evolved Survivors is a cooperative, round-based multiplayer roguelike game built entirely in Unreal Engine 5.6 using native C++. Developed as my university 3rd-year Final Major Project (FMP), the game focuses on delivering intense wave-based combat, rogue-lite progression mechanics, and deterministic environments. The core design philosophy centers around high-performance code architecture and strict network safety, ensuring an optimized, cheat-free gameplay experience over multiplayer sessions.</p>
-            
+
             <h4>Core Technical Architecture & Engineering Highlights</h4>
             <p>Adhering to strict SOLID design principles, the game’s core mechanics are decoupled into modular, single-responsibility Actor Components (UHealthSystem, UPlayerPerks, ULootPool), where the server acts as the absolute authority—hard-gating combat health tracking and deck-shuffling perk selections via reliable Server RPCs before synchronizing properties downstream using RepNotify state mirrors for prediction-smooth client HUD updates. To minimize network bandwidth during high-density cooperative play, environmental layouts utilize a deterministic seeding strategy where the server broadcasts a single int32 Seed property to all machines, allowing remote clients to independently execute identical Perlin noise and grid generation algorithms to achieve perfect asset and collision parity with virtually zero data overhead over the wire. Furthermore, server performance is protected against frame degradation through a multi-tiered entity throttling system that dynamically scales mob ceilings based on active player counts, requiring local spawners to complete an instant handshake verification with ATheGameMode before instantiating an actor mesh while simultaneously offloading cosmetic visual effects to reliable Multicast RPCs. Finally, the backend integrates robust data persistence and diagnostics pipelines driven by custom JSON serialization models; a background-polling UPerformanceLogger component samples low-level platform architecture bounds (including frame render times, CPU cycles, and raw physical memory allocations via platform-level wrappers) to flush a session timeline to disk at teardown, while a native C++ static telemetry class operates on a detached read-modify-write lifecycle to safely parse, evaluate, and overwrite high scores and progressive perk achievements into a permanent profile container completely independent of volatile actor lifecycles.</p>
-            
+
             <h4>Key Takeaways & Next Steps</h4>
             <p>Developing Evolved Survivors from a completely blank page allowed me to master real-world game development patterns, secure network replication paradigms, and complex data serialization methods. Now that the academic project deadlines are successfully completed, I am polishing, optimizing and preparing the title an upcoming release on Steam.</p>
         </div>
@@ -304,69 +304,69 @@
                 View GitHub Repository
             </a>
             <a href="https://store.steampowered.com/app/4689450/Evolved_Survivors/" target="_blank">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:text-bottom;"><path d="M12 .007c-4.996 0-9.25 3.085-10.963 7.434l5.96 2.463c.518-.396 1.15-.635 1.84-.635.32 0 .626.052.916.146l3.961-5.74A5.992 5.992 0 0 1 18 2.007c3.31 0 6 2.69 6 6s-2.69 6-6 6c-1.467 0-2.812-.527-3.86-1.405l-5.71 4.103c.045.242.072.49.072.745 0 2.21-1.79 4-4 4s-4-1.79-4-4c0-2.043 1.534-3.733 3.51-3.964l2.585-6.39A2.99 2.99 0 0 1 10 5.007c0-.622.19-1.2.513-1.685L6.58 9.044A4.983 4.983 0 0 0 2.037 13.5c0 2.76 2.24 5 5 5s5-2.24 5-5c0-.422-.058-.83-.16-.123l5.72-4.11A5.98 5.98 0 0 1 18 10.007c3.31 0 6-2.69 6-6s-2.69-6-6-6z"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block; vertical-align:text-bottom;"><path d="M12 .007c-4.996 0-9.25 3.085-10.963 7.434l5.96 2.463c.518-.396 1.15-.635 1.84-.635.32 0 .626.052.916.146l3.961-5.74A5.992 5.992 0 0 1 18 2.007c3.31 0 6 2.69 6 6s-2.69 6-6 6c-1.467 0-2.812-.527-3.86-1.405l-5.71 4.103c.045.242.072.49.072.745 0 2.21-1.79 4-4 4s-4-1.79-4-4c0-2.043 1.534-3.733 3.51-3.964l2.585-6.39A2.99 2.99 0 0 1 10 5.007c0-.622.19-1.2.513-1.685L6.58 9.044A4.983 4.983 0 0 0 2.037 13.5c0 2.76 2.24 5 5 5s5-2.24 5-5c0-.422-.058-.83-.16-.123l5.72-4.11A5.98 5.98 0 0 1 18 10.007c3.31 0 6-2.69 6-6s-2.69-6-6-6z" /></svg>
                 View Steam Page
             </a>
         </div>
 
-        <h3 class="year-label">Year 2</h3> 
-        <div class="project-grid"> 
-            <div class="project-card"> 
-                <h3>TheCastingOfFrankStone Gameplay</h3> 
+        <h3 class="year-label">Year 2</h3>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>TheCastingOfFrankStone Gameplay</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/euJvi0Sxb40" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Worked in a multidisciplinary team of 8 on an industry brief project with Supermassive Games. Implemented Blueprint systems to support branching narrative mechanics.</p>
             </div>
-            <div class="project-card"> 
-                <h3>Last Drop Trailer</h3> 
+            <div class="project-card">
+                <h3>Last Drop Trailer</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/ce3V-rcXZjs" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Collaborated on a 12-week narrative-driven puzzle platformer. Implemented C++ gameplay systems and Blueprint prototypes.<br><a href="https://siddplus.itch.io/the-last-drop" target="_blank">Play on Itch.io</a> | <a href="https://github.com/University-for-the-Creative-Arts/The-Last-Drop" target="_blank">GitHub</a></p>
             </div>
-            <div class="project-card"> 
-                <h3>Parkour Alien</h3> 
+            <div class="project-card">
+                <h3>Parkour Alien</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/eSQjol-Yd-o" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Solo-developed a 3D platformer exploring movement mechanics. Used Blueprint scripting to fine-tune momentum and jump arcs.<br><a href="https://siddplus.itch.io/parkour-alien" target="_blank">Play on Itch.io</a> | <a href="https://github.com/SiddPlus/Technical-Art-Alive-Game/tree/main" target="_blank">GitHub</a></p>
             </div>
-            <div class="project-card"> 
-                <h3>A Bubbly Journey</h3> 
+            <div class="project-card">
+                <h3>A Bubbly Journey</h3>
                 <a href="https://siddplus.itch.io/a-bubbly-journey" target="_blank"><img src="https://raw.githubusercontent.com/SiddPlus/Portfolio-Website/refs/heads/main/Images/A%20Bubbly%20Journey.png" alt="A Bubbly Journey" class="project-img"></a>
                 <p>Developed in 48 hours in Unity for Global Game Jam. Focused on cooperative puzzle-solving mechanics.</p>
             </div>
             <div class="project-card">
-                <h3>Biscuit Roulette</h3> 
+                <h3>Biscuit Roulette</h3>
                 <a href="https://siddplus.itch.io/biscuit-roulette" target="_blank"><img src="https://raw.githubusercontent.com/SiddPlus/Portfolio-Website/refs/heads/main/Images/Biscuit%20Roulette.jpg" alt="Biscuit Roulette" class="project-img"></a>
                 <p>Created solo during the Brackeys Game Jam. A gambling-themed Unity game emphasizing risk–reward mechanics.</p>
             </div>
         </div>
-        
-        <h3 class="year-label">Year 1</h3> 
-        <div class="project-grid"> 
-            <div class="project-card"> 
-                <h3>Midnight Hollow Hotel</h3> 
+
+        <h3 class="year-label">Year 1</h3>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Midnight Hollow Hotel</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/wAf499Fhv-k" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Designed a narrative-driven game inspired by Supermassive Games. Developed in a team of 4.</p>
             </div>
-            <div class="project-card"> 
-                <h3>Mario Remake Gameplay</h3> 
+            <div class="project-card">
+                <h3>Mario Remake Gameplay</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/2qOjRv0iJ0E" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Remade Super Mario Bros World 1-1, demonstrating platformer mechanics and Unity's 2D tools.</p>
             </div>
-            <div class="project-card"> 
-                <h3>Bank Heist Interactive Narrative</h3> 
+            <div class="project-card">
+                <h3>Bank Heist Interactive Narrative</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/HdZWC-mhQcM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Developed in Unreal Engine 5 as the sole programmer, focusing on branching storylines.</p>
             </div>
-            <div class="project-card"> 
-                <h3>Maze Game</h3> 
+            <div class="project-card">
+                <h3>Maze Game</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/5bbWqov3WN0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Developed a 3D maze game in Unity, focusing on navigation mechanics and AI pathfinding.</p>
             </div>
             <div class="project-card">
-                <h3>Rise of Morning Star</h3> 
+                <h3>Rise of Morning Star</h3>
                 <a href="https://itch.io/jam/uca-2024-opportunity-week-game-jam/rate/2507909" target="_blank"><img src="https://raw.githubusercontent.com/SiddPlus/Portfolio-Website/refs/heads/main/Images/riseofmorningstar.png" alt="Rise of Morning Star" class="project-img"></a>
                 <p>Created during UCA Opportunity Week Game Jam. Focused on quick prototyping.</p>
             </div>
-            <div class="project-card"> 
-                <h3>Alien Planet: 3D Environment</h3> 
+            <div class="project-card">
+                <h3>Alien Planet: 3D Environment</h3>
                 <iframe width="350" height="197" src="https://www.youtube.com/embed/RpGRlGmmS5A" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                 <p>Built a 3D environment in UE5, using Maya and Substance Painter.</p>
             </div>
@@ -392,6 +392,18 @@
                 </ul>
             </div>
             <div class="tools-category-card">
+                <h3>Cloud & Backend</h3>
+                <ul class="tools-list">
+                    <li>Amazon Web Services (AWS)</li>
+                    <li>AWS GameLift / GameLift SDK</li>
+                    <li>AWS Lambda & API Gateway</li>
+                    <li>Amazon Cognito</li>
+                    <li>Amazon DynamoDB</li>
+                    <li>AWS IAM & Security Policies</li>
+                    <li>UE Dedicated Servers & Source Build</li>
+                </ul>
+            </div>
+            <div class="tools-category-card">
                 <h3>Systems & Architecture</h3>
                 <ul class="tools-list">
                     <li>Multiplayer Replication (RPCs)</li>
@@ -413,7 +425,7 @@
 
     <footer id="contact" class="contact-footer">
         <h2 class="contact-title">CONTACT</h2>
-        
+
         <form id="contact-form" action="https://formspree.io/f/mzdajeoo" method="POST" class="contact-form">
             <input type="email" name="email" placeholder="Email Address" class="form-input" required>
             <input type="text" name="name" placeholder="Name" class="form-input" required>
@@ -436,18 +448,18 @@
         const form = document.getElementById("contact-form");
         const successMessage = document.getElementById("success-status");
 
-        form.addEventListener("submit", async function(event) {
+        form.addEventListener("submit", async function (event) {
             event.preventDefault();
             const data = new FormData(event.target);
-            
+
             fetch(event.target.action, {
                 method: 'POST',
                 body: data,
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
                 if (response.ok) {
-                    form.style.display = "none"; 
-                    successMessage.style.display = "block"; 
+                    form.style.display = "none";
+                    successMessage.style.display = "block";
                     form.reset();
                 } else {
                     alert("Oops! There was a problem submitting your form");
@@ -458,5 +470,5 @@
         });
     </script>
 
-  </body>
+</body>
 </html>
