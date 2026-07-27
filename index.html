@@ -6,41 +6,39 @@
     <title>Siddharth Ghosalkar | Portfolio</title>
     <link rel="stylesheet" href="./style.css" />
     <style>
-        /* Stretches the home section to completely fill the monitor screen like the screenshot */
+        /* Stretches the home section to completely fill the monitor screen */
         .video-background-container {
             position: relative;
             width: 100vw;
-            height: 100vh; /* Fills 100% of the viewport height */
+            height: 100vh;
             overflow: hidden;
             background-color: #000;
         }
 
-            /* Ensures the background video scales cleanly without letterboxing */
+            /* Ensures background video scales cleanly without letterboxing */
             .video-background-container iframe {
                 position: absolute;
                 top: 50%;
                 left: 50%;
                 width: 100vw;
-                height: 56.25vw; /* 16:9 Aspect Ratio calculation */
+                height: 56.25vw;
                 min-height: 100vh;
-                min-width: 177.77vh; /* Keeps video from clipping improperly on ultra-wide screens */
+                min-width: 177.77vh;
                 transform: translate(-50%, -50%);
                 z-index: 1;
                 pointer-events: none;
             }
 
-        /* Dark semi-transparent layer matching the moody atmosphere of the reference screenshot */
         .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(10, 15, 20, 0.65); /* Dark tint to elevate text readability */
+            background: rgba(10, 15, 20, 0.65);
             z-index: 2;
         }
 
-        /* Positions the header text content on top of the background video */
         .video-background-container .hero {
             position: absolute;
             top: 50%;
@@ -55,7 +53,7 @@
             box-sizing: border-box;
         }
 
-        /* --- About Me Section Custom Layout Design --- */
+        /* --- About Me Section --- */
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -77,14 +75,12 @@
                 border-color: rgba(255, 255, 255, 0.15);
             }
 
-        /* Mimicking the minimal aesthetic icons from the screenshot template */
         .about-icon {
             font-size: 1.8rem;
             margin-bottom: 15px;
             display: block;
         }
 
-        /* FIXED TEXT ALIGNMENT: Changed from justify to center to eliminate text spacing gaps */
         .about-card p {
             color: #b3b3b3;
             font-size: 0.95rem;
@@ -93,37 +89,34 @@
             text-align: center;
         }
 
-        /* Additional styling for structured project metadata text */
         .project-meta {
             margin-bottom: 15px;
             color: #fff;
             line-height: 1.6;
         }
-            /* Makes the labels unbolded and pure white */
+
             .project-meta span.label {
                 font-weight: normal;
                 color: #fff;
             }
 
-        /* Center-aligned container wrapper for the Year 3 spotlight video showcase */
         .video-showcase-center {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 40px auto 15px auto;
-            max-width: 800px; /* Limits scale width elegantly on ultra-wide desktop monitors */
+            max-width: 800px;
             width: 100%;
         }
 
-        /* Maintains a strict responsive 16:9 widescreen layout for the centered frame video */
         .video-aspect-wrapper {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Proportional Aspect Ratio padding hack */
+            padding-bottom: 56.25%;
             height: 0;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05); /* Premium soft glow layer */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 255, 255, 0.05);
         }
 
             .video-aspect-wrapper iframe {
@@ -135,14 +128,13 @@
                 border: 0;
             }
 
-        /* UPDATED CONTAINER: Flexbox layout for clean horizontal side-by-side buttons */
         .repo-link-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px; /* Perfect spacing between links */
+            gap: 15px;
             margin: 0 auto 40px auto;
-            flex-wrap: wrap; /* Wraps cleanly on mobile portrait screens */
+            flex-wrap: wrap;
         }
 
             .repo-link-container a {
@@ -155,7 +147,7 @@
                 transition: all 0.3s ease;
                 display: inline-flex;
                 align-items: center;
-                gap: 8px; /* Spaces icon text inside the link block */
+                gap: 8px;
                 min-width: 180px;
                 justify-content: center;
                 box-sizing: border-box;
@@ -167,7 +159,7 @@
                     border-color: #fff;
                 }
 
-        /* Custom Layout Styling for the Tools Section */
+        /* Tools Section */
         .tools-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -213,7 +205,6 @@
                 align-items: center;
             }
 
-                /* Minimal modern custom bullet style */
                 .tools-list li::before {
                     content: "•";
                     color: #fff;
@@ -223,7 +214,7 @@
                     margin-left: 2px;
                 }
 
-        /* --- Tab Navigation Styling --- */
+        /* --- Tab Navigation --- */
         .project-tabs {
             display: flex;
             justify-content: center;
@@ -264,6 +255,17 @@
             .tab-content.active-content {
                 display: block;
             }
+
+        /* --- Year Section Headings --- */
+        .year-category-heading {
+            font-size: 1.2rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 8px;
+        }
 
         /* --- Hover Certificate Overlay --- */
         .tools-category-card.cert-hover-card {
@@ -472,7 +474,6 @@
         <div id="jams-tab" class="tab-content active-content">
             <div class="project-grid">
 
-                <!-- NEW POST-GRAD GAME JAM PROJECT -->
                 <div class="project-card">
                     <h3>New Game Jam Title</h3>
                     <a href="YOUR_ITCH_LINK" target="_blank">
@@ -507,9 +508,12 @@
 
         <!-- TAB 2: ACADEMIC PROJECTS -->
         <div id="academic-tab" class="tab-content">
-            <div class="project-grid">
+
+            <!-- YEAR 2 PROJECTS -->
+            <h3 class="year-category-heading">Year 2 Projects</h3>
+            <div class="project-grid" style="margin-bottom: 50px;">
                 <div class="project-card">
-                    <h3>TheCastingOfFrankStone Gameplay</h3>
+                    <h3>The Casting Of Frank Stone Gameplay</h3>
                     <iframe width="350" height="197" src="https://www.youtube.com/embed/euJvi0Sxb40" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                     <p>Worked in a multidisciplinary team of 8 on an industry brief project with Supermassive Games. Implemented Blueprint systems to support branching narrative mechanics.</p>
                 </div>
@@ -523,6 +527,11 @@
                     <iframe width="350" height="197" src="https://www.youtube.com/embed/eSQjol-Yd-o" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
                     <p>Solo-developed a 3D platformer exploring movement mechanics. Used Blueprint scripting to fine-tune momentum and jump arcs.<br><a href="https://siddplus.itch.io/parkour-alien" target="_blank">Play on Itch.io</a> | <a href="https://github.com/SiddPlus/Technical-Art-Alive-Game/tree/main" target="_blank">GitHub</a></p>
                 </div>
+            </div>
+
+            <!-- YEAR 1 PROJECTS -->
+            <h3 class="year-category-heading">Year 1 Projects</h3>
+            <div class="project-grid">
                 <div class="project-card">
                     <h3>Midnight Hollow Hotel</h3>
                     <iframe width="350" height="197" src="https://www.youtube.com/embed/wAf499Fhv-k" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
@@ -549,6 +558,7 @@
                     <p>Built a 3D environment in UE5, using Maya and Substance Painter.</p>
                 </div>
             </div>
+
         </div>
 
     </div>
@@ -605,8 +615,7 @@
                 <ul class="tools-list">
                     <li>Git / Source Control</li>
                     <li>Doxygen</li>
-                    <li>Autodesk Maya</li>
-                    <li>Substance Painter</li>
+                    <li>Trello</li>
                 </ul>
             </div>
         </div>
